@@ -64,6 +64,7 @@
             this.AddName.TabIndex = 2;
             this.AddName.Text = "Tilføj navn";
             this.AddName.UseVisualStyleBackColor = true;
+            this.AddName.Click += new System.EventHandler(this.AddName_Click);
             // 
             // textArrayPosition
             // 
@@ -89,9 +90,11 @@
             this.deletePosition.TabIndex = 5;
             this.deletePosition.Text = "Slet position";
             this.deletePosition.UseVisualStyleBackColor = true;
+            this.deletePosition.Click += new System.EventHandler(this.DeletePosition_Click);
             // 
             // textDisplayNavne
             // 
+            this.textDisplayNavne.BackColor = System.Drawing.SystemColors.Window;
             this.textDisplayNavne.Location = new System.Drawing.Point(418, 93);
             this.textDisplayNavne.Multiline = true;
             this.textDisplayNavne.Name = "textDisplayNavne";
@@ -115,6 +118,7 @@
             this.sortAscending.TabIndex = 8;
             this.sortAscending.Text = "Sortér stigende";
             this.sortAscending.UseVisualStyleBackColor = true;
+            this.sortAscending.Click += new System.EventHandler(this.SortAscending_Click);
             // 
             // sortDescending
             // 
@@ -124,6 +128,7 @@
             this.sortDescending.TabIndex = 9;
             this.sortDescending.Text = "Sortér faldende";
             this.sortDescending.UseVisualStyleBackColor = true;
+            this.sortDescending.Click += new System.EventHandler(this.SortDescending_Click);
             // 
             // Form1
             // 
@@ -141,7 +146,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textNavnBox);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Arrays and Exception handling";
             this.ResumeLayout(false);
             this.PerformLayout();
 
