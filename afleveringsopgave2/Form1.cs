@@ -38,7 +38,7 @@ namespace afleveringsopgave2
                     }
                 }
             }
-            catch (IndexOutOfRangeException) //Popup shown for exception
+            catch (IndexOutOfRangeException) //Popup shown for exception if user tries to enter more than 10 values
             {
                 MessageBox.Show("You have already entered 10 names");
             }
@@ -51,23 +51,25 @@ namespace afleveringsopgave2
             {
                 numToRemove = Convert.ToInt32(textArrayPosition.Text);
                 arrayNames = arrayNames.Where(w => w != arrayNames[numToRemove]).ToArray();
+                //string deleteVar = arrayNames[numToRemove];
+                //arrayNames = arrayNames.Except(new string[] { deleteVar }).ToArray();
                 textArrayPosition.Text = "";
                 foreach (String item in arrayNames)
                 {
                     textDisplayNavne.Lines = arrayNames;
                 }
             }
-            catch (IndexOutOfRangeException)
+            catch (IndexOutOfRangeException) //Popup shown if user tries to delete a position in the array that does not exist
             {
                 MessageBox.Show("The chosen position does not exist - please try again");
             }
-            catch (FormatException)
+            catch (FormatException) //Popup shown if user leaves field blank and pushes the button
             {
                 MessageBox.Show("This field cannot be blank");
             }
         }
 
-        //Code to sort the array in ascending order
+        //Code to sort the array in ascending order when the button is pushed
         private void SortAscending_Click(object sender, EventArgs e)
         {
             Array.Sort(arrayNames);
@@ -77,7 +79,7 @@ namespace afleveringsopgave2
             }
         }
 
-        //Code to sort the array in descending order
+        //Code to sort the array in descending order when the button is pushed
         private void SortDescending_Click(object sender, EventArgs e)
         {
             Array.Sort(arrayNames);
