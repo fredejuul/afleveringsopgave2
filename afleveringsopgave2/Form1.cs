@@ -40,7 +40,7 @@ namespace afleveringsopgave2
             }
             catch (IndexOutOfRangeException) //Popup shown for exception
             {
-                MessageBox.Show("You have entered 10 names");
+                MessageBox.Show("You have already entered 10 names");
             }
         }
 
@@ -59,7 +59,11 @@ namespace afleveringsopgave2
             }
             catch (IndexOutOfRangeException)
             {
-
+                MessageBox.Show("The chosen position does not exist - please try again");
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("This field cannot be blank");
             }
         }
 
